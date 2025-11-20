@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3, 2, Pumpkin!</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- style.css는 globals.css로 통합되었습니다 -->
 </head>
 <body>
     <div id="container">
         <!-- 상단 비디오 -->
         <div id="video-container">
-            <video id="intro-video" width="80%" autoplay muted>
+            <video id="intro-video" width="80%" autoplay muted playsinline preload="auto" style="display: block; width: 80%; height: auto; background-color: #000;">
                 <source src="intro_title.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
         </div>
 
@@ -19,6 +20,9 @@
         <div id="carousel-container">
             <div id="carousel" class="carousel">
                 <!-- 카드들이 JavaScript로 동적으로 생성됩니다 -->
+            </div>
+            <div id="carousel2" class="carousel">
+                <!-- 두 번째 row 카드들이 JavaScript로 동적으로 생성됩니다 -->
             </div>
         </div>
 

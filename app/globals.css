@@ -6,22 +6,27 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #2a2a2a;
+    background-color: #000;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow-x: hidden;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* 상하 스크롤 제거 */
 }
 
 #container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
 }
 
 /* 비디오 컨테이너 */
@@ -35,20 +40,43 @@ body {
 #intro-video {
     width: 80%;
     height: auto;
-    display: block;
+    display: block !important;
+    visibility: visible !important;
+    max-width: 100%;
+    background-color: #000;
+    min-height: 200px;
 }
 
 /* 카루셀 컨테이너 */
 #carousel-container {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: -20px;
+    padding: 20px 0;
+    padding-left: 0;
+    padding-right: 0;
     overflow: hidden;
     position: relative;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    align-items: flex-start;
+    left: 0;
+    right: 0;
 }
 
 .carousel {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     gap: 20px;
     will-change: transform;
+    min-height: 220px !important;
+    height: 220px !important;
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 /* 카드 스타일 */
@@ -56,7 +84,7 @@ body {
     flex-shrink: 0;
     width: 200px;
     height: 200px;
-    background-color: #d3d3d3;
+    /* background-color: #d3d3d3; */
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -64,6 +92,7 @@ body {
     position: relative;
     transition: transform 0.3s ease;
     cursor: pointer;
+    transform-origin: center center;
 }
 
 .card img {
@@ -73,7 +102,26 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    animation: cardHover 0.4s ease-in-out;
+    transform: scale(1.1) rotate(0deg);
+}
+
+@keyframes cardHover {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.05) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(10deg);
+    }
+    75% {
+        transform: scale(1.05) rotate(-5deg);
+    }
+    100% {
+        transform: scale(1.1) rotate(0deg);
+    }
 }
 
 /* 버튼 컨테이너 */
@@ -82,6 +130,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -30px;
 }
 
 .start-button {
@@ -122,3 +171,4 @@ body {
         max-width: 150px;
     }
 }
+
