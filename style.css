@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2a2a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+#container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* 비디오 컨테이너 */
+#video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro-video {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+
+/* 카루셀 컨테이너 */
+#carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+}
+
+/* 카드 스타일 */
+.card {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.card img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* 버튼 컨테이너 */
+#button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.start-button:hover {
+    transform: scale(1.05);
+}
+
+.start-button:active {
+    transform: scale(0.95);
+}
+
+.start-button img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 200px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    #container {
+        gap: 30px;
+    }
+
+    .card {
+        width: 150px;
+        height: 150px;
+    }
+
+    .start-button img {
+        max-width: 150px;
+    }
+}
